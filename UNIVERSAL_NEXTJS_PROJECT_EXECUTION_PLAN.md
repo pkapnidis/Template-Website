@@ -6,16 +6,22 @@ When starting a new Next.js project, use this template to:
 ### **STEP 1: PROCESS CUSTOMER DATA (START HERE)**
 1. **Read `CUSTOMER_DATA.md` file first** - This contains the GrowInity form submission
 2. **Extract all customer information** from the email data in that file
-3. **Auto-generate project files** using the extracted data
-4. **Create project-specific CLAUDE.md** with customer specifications
-5. **Populate asset folders** with available information
-6. **Follow the 6-phase execution plan** for consistent delivery
+3. **Skip to "Customer Data Integration" section** - All form data is auto-populated
+4. **Check "Additional Technical Questions"** - Only fill if needed based on project
+5. **Auto-generate project files** using the extracted data
+6. **Create project-specific CLAUDE.md** with customer specifications
 
 ### **STEP 2: VALIDATE TEMPLATE ASSETS**
 1. **Read template assets**: Check the following files and folders for project information
 2. **Verify competitive analysis**: Check competitor URLs and analysis requirements
 3. **Confirm brand assets**: Ensure brand information is properly extracted
 4. **Integrate modern best practices and tools**
+
+### **STEP 3: NO DUPLICATE QUESTIONS**
+- ✅ **DO**: Use form data directly from CUSTOMER_DATA.md
+- ✅ **DO**: Only ask technical questions not covered in the form
+- ❌ **DON'T**: Re-ask any questions already answered in the form
+- ❌ **DON'T**: Fill out sections manually that can be auto-populated
 
 **Note**: MCPs (Bright Data and Context-7) should already be installed before reaching this plan.
 
@@ -29,13 +35,16 @@ The email contains structured data from the GrowInity form with all project requ
 ```
 
 #### 1.2 Extract Key Information
-From the email data, extract:
-- Project name and business goals
-- Target audience demographics  
-- Design preferences and brand requirements
-- Technical specifications and integrations
-- Budget, timeline, and contact information
-- All optional fields that were completed
+From the email data, extract ALL form fields - they will auto-populate sections throughout this document:
+- ✅ Project details (name, goals, industry, description)
+- ✅ Target audience (age, location, problems, behavior)
+- ✅ Design preferences (style, colors, mood, animations)
+- ✅ Brand information (USP, tone, messages, assets)
+- ✅ Technical requirements (integrations, languages, CRM)
+- ✅ Marketing setup (Facebook, tracking, newsletter)
+- ✅ Budget, timeline, and contact information
+
+**IMPORTANT**: After extraction, skip directly to "Customer Data Integration" section - all this data is already collected!
 
 ### Step 2: Read Template Assets (After Processing Customer Data)
 After extracting customer data, read these files to gather additional project information:
@@ -63,219 +72,157 @@ After extracting customer data, read these files to gather additional project in
 
 ---
 
-## Pre-Development Questions (Please Fill Out)
+## 🔴 STOP HERE IF PROCESSING FORM DATA 🔴
+**The section below contains all the customer data from the form. DO NOT manually fill these fields!**
 
-### 1. Project Overview & Goals
-- **Project Name:** ___________
-- **Primary Business Goal:** 
-  - [ ] Lead generation/Email collection
-  - [ ] Direct sales/E-commerce
-  - [ ] Brand awareness
-  - [ ] Service bookings
-  - [ ] Community building
-  - [ ] Other: ___________
-- **Target Industry:** ___________
-- **Brief Description:** ___________
+---
 
-### 2. Target Audience Analysis
-- **Primary Demographics:** 
-  - Age range: ___________
-  - Gender focus: ___________
-  - Income level: ___________
-  - Location: ___________
-- **Audience Pain Points:** ___________
-- **User Personas (describe 2-3):** ___________
-- **Audience Behavior Online:** ___________
+## Customer Data Integration from GrowInity Form
 
-### 3. Competitive Analysis & Research
-**📁 Competitor URLs**: Add competitor websites to `./assets/competitor-urls.txt` (one URL per line)
+### 🚀 IMPORTANT: Start Here for Form Submissions
+**When a customer submits the GrowInity form:**
+1. **First read CUSTOMER_DATA.md** - This contains the complete form submission
+2. **All data below is AUTO-POPULATED** - Do NOT ask these questions again
+3. **Skip to "Additional Technical Questions" section** for any missing technical details
 
-**Additional Questions:**
-- **What you like about competitors:** ___________
-- **What you want to improve upon:** ___________
-- **Direct competitors in your space:** ___________
-- **Specific features to analyze:** ___________
+### 📊 Form Data Mapping Reference
 
-**Note for Claude:** 
-- Read `./assets/competitor-urls.txt` and analyze each URL with Bright Data MCP
-- Focus on layout structures, UX flows, content strategies, visual hierarchy, CTAs, and modern design elements
-- Compare findings with project goals and target audience
+| Form Field | Auto-Populates To | Status |
+|------------|-------------------|---------|
+| `projectName` | Project Name | ✅ From Form |
+| `businessGoal` | Primary Business Goal | ✅ From Form |
+| `industry` | Target Industry | ✅ From Form |
+| `businessDescription` | Project Description | ✅ From Form |
+| `customerAge` | Target Age Range | ✅ From Form |
+| `customerLocation` | Target Location | ✅ From Form |
+| `customerProblems` | Audience Pain Points | ✅ From Form |
+| `customerBehavior` | Online Behavior | ✅ From Form |
+| `inspirationUrls` | Competitor URLs | ✅ From Form |
+| `designStyle` | Design Aesthetic | ✅ From Form |
+| `preferredColors` | Color Preferences | ✅ From Form |
+| `desiredMood` | Mood/Atmosphere | ✅ From Form |
+| `animations` | Animation Preferences | ✅ From Form |
+| `uniqueSellingPoint` | USP | ✅ From Form |
+| `brandTone` | Brand Voice | ✅ From Form |
+| `keyMessages` | Key Messages | ✅ From Form |
+| `usesFacebook` | Facebook Marketing | ✅ From Form |
+| `facebookPixelId` | Pixel ID | ✅ From Form |
+| `integrations` | Required Integrations | ✅ From Form |
+| `budget` | Budget Range | ✅ From Form |
+| `timeline` | Timeline | ✅ From Form |
+| `contactName/Email` | Contact Info | ✅ From Form |
 
-### 4. Advanced Design & Layout Preferences
+### 📋 Complete Form Field List
+**All these fields are collected by the GrowInity form - no need to ask again:**
 
-#### 4.1 Visual Style Direction
-- **Design Aesthetic:** 
-  - [ ] Minimalist/Clean
-  - [ ] Bold/Vibrant
-  - [ ] Corporate/Professional
-  - [ ] Creative/Artistic
-  - [ ] Modern/Futuristic
-  - [ ] Warm/Friendly
-- **Color Preferences:** ___________
-- **Fonts/Typography Style:** ___________
-- **Mood/Atmosphere:** ___________
+```
+✅ projectName           ✅ customerAge          ✅ uniqueSellingPoint
+✅ businessGoal          ✅ customerLocation     ✅ brandTone
+✅ businessGoalOther     ✅ customerProblems     ✅ keyMessages (array)
+✅ industry              ✅ customerBehavior     ✅ hasAssets (array)
+✅ businessDescription   ✅ inspirationUrls      ✅ websiteComponents
+✅ designStyle (array)   ✅ inspirationLikes     ✅ contactMethods
+✅ preferredColors       ✅ inspirationDifference ✅ formFields
+✅ desiredMood          ✅ usesFacebook         ✅ integrations (array)
+✅ animations (array)    ✅ facebookPixel        ✅ languages
+✅ budget               ✅ facebookPixelId      ✅ hostingPreference
+✅ timeline             ✅ trackingGoals        ✅ supportType
+✅ specificDate         ✅ newsletterSystem     ✅ contactName/Email
+```
 
-#### 4.2 Layout & Effects (2025 Trends)
-- **Layout Preference:**
-  - [ ] Symmetric/Traditional grid
-  - [ ] Asymmetric/Bold blocks
-  - [ ] Anti-design/Experimental
-  - [ ] Minimalist with negative space
-- **Animation Preferences:**
-  - [ ] Micro-interactions (hover effects, button animations)
-  - [ ] Scroll-triggered animations
-  - [ ] 3D elements/immersive graphics
-  - [ ] Parallax effects
-  - [ ] Minimal/subtle animations only
-- **Interactive Elements Desired:**
-  - [ ] Animated buttons and CTAs
-  - [ ] Loading animations
-  - [ ] Page transitions
-  - [ ] Interactive forms
-  - [ ] Scroll progress indicators
-- **Modern Effects:**
-  - [ ] Glassmorphism
-  - [ ] Gradient overlays
-  - [ ] Custom illustrations
-  - [ ] Video backgrounds
-  - [ ] AI-powered personalization
+### 🔄 Auto-Population Process
+When processing form data, Claude will:
+1. Extract all form fields from CUSTOMER_DATA.md
+2. Populate the corresponding sections automatically
+3. Create asset files (competitor-urls.txt, brand-info.txt)
+4. Generate project-specific CLAUDE.md
+5. Identify any gaps that need developer input
 
-### 5. Branding & Assets
-**📁 Brand Information**: Fill out `./assets/branding/brand-info.txt` with your brand guidelines
+---
 
-**📁 Asset Folders**: Upload your assets to the appropriate folders:
-- **Logos**: `./assets/branding/logos/` (SVG, PNG formats)
-- **Images**: `./assets/branding/images/` (hero, product, team photos)
+## Additional Technical Questions (Developer Use Only)
 
-**Additional Brand Questions:**
-- **Brand Voice/Tone:** ___________
-- **Brand Personality:** ___________
-- **Brand Values:** ___________
-- **Unique Selling Proposition:** ___________
+### ⚙️ Technical Specifications NOT in Customer Form
 
-**Note for Claude:** 
-- Read `./assets/branding/brand-info.txt` for color palette, typography, and brand guidelines
-- Check asset folders for available logos and images
-- Use brand information to customize CLAUDE.md file
+These questions may need clarification after reviewing the form submission:
 
-### 6. Content Strategy
-**📁 Content References**: Add content inspiration URLs to `./assets/content-links.txt`
+#### Advanced Layout & Effects
+- **Specific Layout Grid System:** 
+  - [ ] CSS Grid with specific breakpoints
+  - [ ] Flexbox-based layout
+  - [ ] Custom grid system
+  - **Notes:** ___________ (only if customer needs differ from standard responsive design)
 
-**Core Content Questions:**
-- **Primary Value Proposition:** ___________
-- **Key Messages (3-5 main points):** ___________
-- **Content Types Needed:**
-  - [ ] Hero headlines
-  - [ ] Product descriptions
-  - [ ] About us/team
-  - [ ] Testimonials
-  - [ ] Blog posts
-  - [ ] FAQ
-  - [ ] Legal pages
-- **SEO Keywords (if known):** ___________
-- **Content Creation:** 
-  - [ ] I'll provide all content
-  - [ ] Help me create content
-  - [ ] Claude should suggest content
+- **Advanced Animation Requirements:**
+  - [ ] Complex page transitions
+  - [ ] 3D transformations
+  - [ ] WebGL/Three.js elements
+  - [ ] Lottie animations
+  - **Notes:** ___________ (only if beyond standard Framer Motion)
 
-**Note for Claude:** 
-- Read `./assets/content-links.txt` for content inspiration and examples
-- Use content references to understand desired tone and style
-- Incorporate insights into content recommendations
+#### Technical Architecture
+- **Specific Framework Requirements:**
+  - Next.js version constraints? ___________
+  - TypeScript strict mode required? [ ] Yes [ ] No
+  - Specific Node version? ___________
 
-### 7. Facebook Marketing & Pixel Integration
-- **Facebook Marketing:**
-  - [ ] Yes, Facebook is my primary marketing channel
-  - [ ] Planning to use Facebook ads
-  - [ ] No Facebook marketing planned
-- **Facebook Pixel Setup:**
-  - [ ] Already have Facebook Pixel ID
-  - [ ] Need help setting up Facebook Pixel
-  - [ ] Not using Facebook Pixel
-- **Facebook Pixel ID (if available):** ___________
-- **Events to Track:**
-  - [ ] Page views
-  - [ ] Lead generation (form submissions)
-  - [ ] Contact button clicks
-  - [ ] Purchase/conversion
-  - [ ] Custom events: ___________
-- **Conversion Goals:** ___________
+- **Authentication & User Management:**
+  - [ ] NextAuth.js
+  - [ ] Clerk
+  - [ ] Supabase Auth
+  - [ ] Custom auth solution
+  - **Requirements:** ___________ (only if form indicates user accounts needed)
 
-### 8. Lead Capture & Contact Strategy
-- **Primary Conversion Goal:**
-  - [ ] Email collection
-  - [ ] Phone calls
-  - [ ] Form submissions
-  - [ ] WhatsApp contact
-  - [ ] Direct sales
-  - [ ] Appointment booking
-- **Form Fields Required:** ___________
-- **Contact Methods:**
-  - [ ] Contact form
-  - [ ] WhatsApp integration
-  - [ ] Phone number display
-  - [ ] Social media links
-  - [ ] Live chat
-- **Follow-up Strategy:** ___________
+- **Database Requirements:**
+  - [ ] PostgreSQL (Supabase/Neon)
+  - [ ] MongoDB
+  - [ ] Prisma ORM required
+  - [ ] No database needed
+  - **Schema complexity:** ___________
 
-### 9. Technical Requirements & Integrations
-- **Required Integrations:**
-  - [ ] Email marketing (which service: _______)
-  - [ ] CRM system (which: _______)
-  - [ ] Analytics (Google Analytics, etc.)
-  - [ ] Payment processing (if applicable)
-  - [ ] Booking system
-  - [ ] Social media feeds
-- **Special Functionality:**
-  - [ ] Multi-language support
-  - [ ] User accounts/login
-  - [ ] Search functionality
-  - [ ] Blog/CMS
-  - [ ] E-commerce features
-  - [ ] Interactive tools/calculators
+- **API Specifications:**
+  - External APIs to integrate: ___________
+  - Rate limiting requirements: ___________
+  - Webhook endpoints needed: ___________
 
-### 10. SEO & Performance Requirements
-- **SEO Priority Level:**
-  - [ ] High - Need aggressive SEO strategy
-  - [ ] Medium - Basic SEO optimization
-  - [ ] Low - Minimal SEO focus
-- **Target Keywords (if researched):** ___________
-- **Local SEO Needed:** [ ] Yes [ ] No
-- **Performance Targets:**
-  - Lighthouse Score target: ___________
-  - Loading time expectation: ___________
-- **Mobile Priority:**
-  - [ ] Mobile-first (majority mobile users)
-  - [ ] Desktop-first (majority desktop users)
-  - [ ] Equal priority
+#### Performance & Optimization
+- **Specific Performance Requirements:**
+  - Max bundle size: ___________ KB
+  - Time to Interactive target: ___________ seconds
+  - Specific caching strategy: ___________
 
-### 11. Budget & Timeline
-- **Project Budget Range:**
-  - [ ] Under $2,000
-  - [ ] $2,000 - $5,000
-  - [ ] $5,000 - $10,000
-  - [ ] $10,000+
-- **Timeline Urgency:**
-  - [ ] ASAP (within 1 week)
-  - [ ] Normal (2-3 weeks)
-  - [ ] Flexible (1-2 months)
-- **Launch Date (if specific):** ___________
+- **SEO Technical Requirements:**
+  - Structured data types needed: ___________
+  - XML sitemap specifications: ___________
+  - Robots.txt customization: ___________
 
-### 12. Compliance & Legal Requirements
-- **Industry Regulations:**
-  - [ ] Health/supplement disclaimers
-  - [ ] Financial services compliance
-  - [ ] GDPR compliance needed
-  - [ ] CCPA compliance needed
-  - [ ] Affiliate disclosure requirements
-  - [ ] Age verification
-  - [ ] Other: ___________
-- **Required Legal Pages:**
-  - [ ] Privacy Policy
-  - [ ] Terms of Service
-  - [ ] Cookie Policy
-  - [ ] Disclaimer
-  - [ ] Affiliate Disclosure
+#### Deployment & DevOps
+- **CI/CD Requirements:**
+  - [ ] GitHub Actions setup
+  - [ ] Automated testing required
+  - [ ] Staging environment needed
+  - **Custom deployment needs:** ___________
+
+- **Monitoring & Analytics:**
+  - [ ] Sentry error tracking
+  - [ ] Custom analytics events
+  - [ ] Performance monitoring (Vercel Analytics)
+  - **Additional tracking:** ___________
+
+#### Content Management
+- **CMS Requirements (if blog/dynamic content needed):**
+  - [ ] Sanity.io
+  - [ ] Contentful
+  - [ ] MDX files
+  - [ ] Custom CMS solution
+  - **Content types:** ___________
+
+### 📝 Notes Section
+**Additional technical considerations based on form review:**
+_This section is filled by the developer after analyzing the form submission_
+- 
+- 
+- 
 
 ---
 
