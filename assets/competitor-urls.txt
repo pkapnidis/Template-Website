@@ -1,0 +1,10 @@
+# Competitor URLs for Analysis
+# Add one URL per line - Claude will analyze these with Bright Data MCP
+
+# Example:
+# https://competitor1.com
+# https://competitor2.com  
+# https://competitor3.com
+
+# Add your competitor URLs below:
+
