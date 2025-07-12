@@ -1,27 +1,43 @@
 # Universal Next.js Project Execution Plan Template
 
+## 🚨 CRITICAL EXECUTION RULES
+
+### **⚠️ DIRECTORY REQUIREMENTS**
+- ❌ **NEVER create new project folders** 
+- ✅ **ALWAYS work within `Next.js-Template-GrowInity` directory just rename the directory to (Project name)**
+- ✅ **Preserve MCP configurations** (Bright Data, Context-7)
+- ✅ **Use existing assets folder structure**
+
+### **📋 PHASE-BY-PHASE TODO SYSTEM**
+- ✅ **Create separate todo lists for each phase**
+- ✅ **Complete each phase FULLY before next phase**
+- ✅ **Verify all requirements before proceeding**
+- ❌ **DO NOT mix phases in single todo list**
+
 ## Instructions for Claude
 When starting a new Next.js project, use this template to:
 
-### **STEP 1: PROCESS CUSTOMER DATA (START HERE)**
-1. **Read `CUSTOMER_DATA.md` file first** - This contains the GrowInity form submission
-2. **Extract all customer information** from the email data in that file
-3. **Skip to "Customer Data Integration" section** - All form data is auto-populated
-4. **Check "Additional Technical Questions"** - Only fill if needed based on project
-5. **Auto-generate project files** using the extracted data
+### **STEP 1: PRE-EXECUTION VERIFICATION**
+1. **Verify Current Directory** - Must be in `Next.js-Template-GrowInity`
+2. **Check MCP Availability** - Confirm `bright-data` and `context-7` MCPs are installed
+3. **Read `CUSTOMER_DATA.md` file first** - This contains the GrowInity form submission
+4. **Extract all customer information** from the email data in that file
+5. **Read ALL asset files** - brand-info.txt, competitor-urls.txt, content-links.txt
 6. **Create project-specific CLAUDE.md** with customer specifications
 
 ### **STEP 2: VALIDATE TEMPLATE ASSETS**
-1. **Read template assets**: Check the following files and folders for project information
-2. **Verify competitive analysis**: Check competitor URLs and analysis requirements
-3. **Confirm brand assets**: Ensure brand information is properly extracted
-4. **Integrate modern best practices and tools**
+1. **Read brand-info.txt** - Extract EXACT colors, fonts, and brand guidelines
+2. **Inventory existing assets** - Check logos and images in branding folders
+3. **Review competitor URLs** - Prepare for Bright Data analysis
+4. **Confirm content references** - Review content-links.txt
 
 ### **STEP 3: NO DUPLICATE QUESTIONS**
 - ✅ **DO**: Use form data directly from CUSTOMER_DATA.md
-- ✅ **DO**: Only ask technical questions not covered in the form
+- ✅ **DO**: Use existing brand assets and colors
+- ✅ **DO**: Work within existing directory structure
 - ❌ **DON'T**: Re-ask any questions already answered in the form
-- ❌ **DON'T**: Fill out sections manually that can be auto-populated
+- ❌ **DON'T**: Create new folders or duplicate assets
+- ❌ **DON'T**: Mix multiple phases in one todo list
 
 **Note**: MCPs (Bright Data and Context-7) should already be installed before reaching this plan.
 
@@ -162,9 +178,7 @@ These questions may need clarification after reviewing the form submission:
 
 #### Technical Architecture
 - **Specific Framework Requirements:**
-  - Next.js version constraints? ___________
-  - TypeScript strict mode required? [ ] Yes [ ] No
-  - Specific Node version? ___________
+  - Next.js version constraints?  Choose the best!
 
 - **Authentication & User Management:**
   - [ ] NextAuth.js
@@ -522,16 +536,40 @@ Framework: Next.js 14+ (App Router)
 Styling: Tailwind CSS
 Animations: Framer Motion
 Forms: React Hook Form + Zod validation
-Email: EmailJS or Resend
+Email: Resend
 Deployment: Vercel
-Analytics: Vercel Analytics (built-in)
-Marketing: Facebook Pixel (when applicable)
+Analytics: Basic website analytics (Google Analytics)
 Testing: Playwright (E2E) with UI Mode
+Marketing: Only implement if customer specifically requests
 ```
 
-### Facebook Pixel Implementation Guide
+### Optional Marketing Features (Only Implement If Customer Requests)
 
-#### Setup for Next.js 14 App Router
+#### Facebook Pixel Integration (If Requested)
+- Only implement if customer specifically mentions social media marketing
+- Check CUSTOMER_DATA.md for Facebook usage requirements
+- See detailed implementation guide below in "Implementation Examples"
+
+#### Email Marketing Integration (If Requested)
+- Newsletter systems (Mailchimp, ConvertKit, etc.)
+- Email automation
+- Lead magnets and sequences
+
+#### Analytics & Tracking (Standard)
+- Google Analytics (always include for basic website analytics)
+- Search Console setup
+- Basic conversion tracking
+
+---
+
+## Implementation Examples
+
+### Facebook Pixel Setup for Next.js 14 App Router
+**⚠️ CRITICAL: ONLY IMPLEMENT IF CUSTOMER EXPLICITLY REQUESTS SOCIAL MEDIA MARKETING**
+**🔍 Always check CUSTOMER_DATA.md first - do not assume this is needed**
+
+#### Setup Instructions (When Customer Requests It)
+
 1. **Install Dependencies:**
 ```bash
 npm install react-facebook-pixel
@@ -619,71 +657,127 @@ export const useFacebookPixel = () => {
 };
 ```
 
-#### Common Events Implementation
+#### Common Events Implementation (When Applicable)
 - **Lead Event:** Form submissions
 - **Contact Event:** WhatsApp/contact button clicks
 - **ViewContent Event:** Product/service page views
-- **Custom Events:** Based on project needs
+- **Custom Events:** Based on specific project needs
+
+#### Environment Variables (When Using Facebook Pixel)
+```env
+NEXT_PUBLIC_FACEBOOK_PIXEL_ID=your_pixel_id_here
+```
 
 ---
 
-## Development Phases (6-Phase Approach)
+## Development Phases (6-Phase Approach) - SEQUENTIAL EXECUTION
+
+### 🚨 IMPORTANT: Phase-by-Phase Todo System
+**Create separate todo lists for each phase. Do NOT proceed to next phase until current phase is 100% complete.**
 
 ### Phase 1: Setup & Foundation (30-45 minutes)
-- [ ] Initialize Next.js project with TypeScript
+**🔴 STOP: Create PHASE 1 TODO LIST ONLY**
+**🔍 CUSTOMER CHECK FIRST: Review CUSTOMER_DATA.md and CLAUDE.md for project requirements**
+
+**⚠️ CRITICAL: Phase 1 MUST include complete Playwright testing setup (lines 692-696)**
+**This ensures testing framework is ready for future test creation when needed**
+- [ ] **VERIFY**: Current directory is `Next.js-Template-GrowInity` 
+- [ ] **VERIFY**: MCPs (bright-data, context-7) are available
+- [ ] **READ**: brand-info.txt for EXACT brand colors (#22254F #016ADF #FFFFFF)
+- [ ] **READ**: assets/branding/logos/ for existing logo files
+- [ ] Initialize Next.js project **IN CURRENT DIRECTORY** (no new folders)
 - [ ] Install dependencies: Tailwind, Framer Motion, React Hook Form, Zod
-- [ ] Configure Tailwind with custom brand colors
-- [ ] Set up basic project structure
-- [ ] Create reusable UI components (Button, Input)
+- [ ] Configure Tailwind with **EXACT brand colors from brand-info.txt**
+- [ ] Set up basic project structure within existing folder
+- [ ] Create reusable UI components (Button, Input) 
+- [ ] **USE EXISTING LOGO** from assets/branding/logos/
 - [ ] Configure Facebook Pixel (if applicable)
-- [ ] Install Playwright testing framework: `npm init playwright@latest`
-- [ ] Configure playwright.config.ts with webServer and base settings
-- [ ] Create /test folder structure (empty, ready for tests)
-- [ ] Add test scripts to package.json
+- [ ] **COMPLETE PLAYWRIGHT SETUP** (4 steps):
+  - [ ] Install Playwright: `npm init playwright@latest` (choose TypeScript, e2e folder, GitHub Actions)
+  - [ ] Create test folder structure: `/test/e2e/`, `/test/page-objects/`, `/test/fixtures/`, `/test/utils/`
+  - [ ] Add test scripts to package.json: `test`, `test:ui`, `test:debug`, `test:headed`, `test:report`, `test:codegen`
+  - [ ] Create test README.md with usage instructions and example test workflow
+- [ ] **VERIFICATION**: Brand colors visible, logo integrated, MCPs working, **Playwright tests runnable** (`npm run test --help` works)
+- [ ] **STOP HERE**: Mark Phase 1 complete before Phase 2
 
 ### Phase 2: Core Layout & Design (45-60 minutes)
+**🔴 STOP: Create PHASE 2 TODO LIST ONLY (after Phase 1 complete)**
+**🔍 CUSTOMER CHECK: Review design preferences and branding requirements**
+- [ ] **USE Bright Data MCP**: Analyze each URL in competitor-urls.txt
+- [ ] **DOCUMENT**: Competitive analysis insights 
+- [ ] **USE EXISTING IMAGES** from assets/branding/images/
 - [ ] Build responsive layout with header/footer
 - [ ] Implement Hero section with brand-specific messaging
 - [ ] Create product/service showcase sections
 - [ ] Add benefits/features section with 2025 design trends
 - [ ] Implement mobile-first responsive design
-- [ ] Apply competitor analysis insights
+- [ ] **APPLY**: Competitor analysis insights to design
+- [ ] **VERIFICATION**: All existing assets used, competitive insights applied
+- [ ] **STOP HERE**: Mark Phase 2 complete before Phase 3
 
 ### Phase 3: Interactive Elements & Effects (30-45 minutes)
-- [ ] Implement contact form with validation
-- [ ] Add Framer Motion animations based on preferences
+**🔴 STOP: Create PHASE 3 TODO LIST ONLY (after Phase 2 complete)**
+**🔍 CUSTOMER CHECK: Review contact methods and form requirements**
+- [ ] Implement contact form with validation (Name, Email, Phone, Message)
+- [ ] Add Framer Motion animations based on customer preferences
 - [ ] Create smooth scroll navigation
 - [ ] Add hover effects and micro-interactions
 - [ ] Implement loading states and transitions
 - [ ] Apply modern effects (glassmorphism, gradients, etc.)
+- [ ] **VERIFICATION**: All animations working, form functional
+- [ ] **STOP HERE**: Mark Phase 3 complete before Phase 4
 
 ### Phase 4: Content Integration & Personalization (30 minutes)
-- [ ] Add provided content and images
+**🔴 STOP: Create PHASE 4 TODO LIST ONLY (after Phase 3 complete)**
+**🔍 CUSTOMER CHECK: Review content requirements and personalization needs**
+- [ ] **USE**: Content references from content-links.txt
+- [ ] **USE**: Existing images from assets/branding/images/
 - [ ] Implement lead capture strategy
 - [ ] Add testimonials/social proof section
 - [ ] Integrate WhatsApp/contact methods
 - [ ] SEO optimization (meta tags, structured data)
 - [ ] Apply AI-powered personalization (if requested)
+- [ ] **VERIFICATION**: All existing content and images integrated
+- [ ] **STOP HERE**: Mark Phase 4 complete before Phase 5
 
-### Phase 5: Marketing & Analytics Integration (20-30 minutes)
-- [ ] Configure Facebook Pixel events
-- [ ] Set up conversion tracking
-- [ ] Implement email integration
-- [ ] Add analytics tracking
-- [ ] Test all marketing integrations
-- [ ] Verify event firing with Facebook Pixel Helper
+### Phase 5: Customer-Requested Integrations (20-30 minutes)
+**🔴 STOP: Create PHASE 5 TODO LIST ONLY (after Phase 4 complete)**
+**🔍 CUSTOMER CHECK FIRST: Review CUSTOMER_DATA.md integrations section**
+
+ONLY implement what customer specifically requested:
+- [ ] Payment processing integration (if in customer requirements)
+- [ ] Email service integration (for contact forms - standard)
+- [ ] Basic website analytics (Google Analytics - standard)
+- [ ] Facebook Pixel (ONLY if customer requested social media marketing)
+- [ ] CRM integration (if specified and not "Geen" or "None")
+- [ ] Newsletter system (if requested)
+- [ ] Other customer-specific integrations from their form
+- [ ] **VERIFICATION**: Only requested integrations implemented
+- [ ] **STOP HERE**: Mark Phase 5 complete before Phase 6
 
 ### Phase 6: Testing, Compliance & Deployment (30 minutes)
+**🔴 STOP: Create PHASE 6 TODO LIST ONLY (after Phase 5 complete)**
+**🔍 CUSTOMER CHECK: Review legal requirements and deployment preferences**
 - [ ] Add compliance requirements (disclaimers, privacy policy)
 - [ ] Test form submissions and integrations
 - [ ] Mobile responsiveness testing
 - [ ] Performance optimization (Lighthouse 95+)
 - [ ] Deploy to Vercel with custom domain
 - [ ] Final testing and optimization
+- [ ] **FINAL VERIFICATION**: All features working, brand applied, assets used
 
 ---
 
 ## Testing Infrastructure (Only When Requested)
+
+### ✅ Playwright Setup Summary (Completed in Phase 1)
+After Phase 1 completion, your project will have:
+- ✅ `@playwright/test` package installed
+- ✅ `/test/` folder structure created
+- ✅ `playwright.config.ts` configured
+- ✅ Test scripts added to package.json
+- ✅ Test README.md with instructions
+- ✅ `npm run test --help` command working
 
 ### Important: Tests Are Created On-Demand Only
 Tests are NOT created during the initial project setup. The testing infrastructure is installed and configured, but actual tests are only written when explicitly requested by the user.

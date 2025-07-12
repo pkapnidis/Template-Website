@@ -64,7 +64,7 @@ You may need to re-install MCPs if:
 Simply re-run the installation commands above.
 
 ---
-
+ 
 ## ⚡ Quick Installation Script
 
 Copy and paste both commands at once:
