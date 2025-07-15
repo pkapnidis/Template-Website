@@ -4,7 +4,7 @@
 
 ### **⚠️ DIRECTORY REQUIREMENTS**
 - ❌ **NEVER create new project folders** 
-- ✅ **ALWAYS work within `Next.js-Template-GrowInity` directory just rename the directory to (Project name)**
+- ✅ **ALWAYS work within `root` directory just rename the directory to (Project name)**
 - ✅ **Preserve MCP configurations** (Bright Data, Context-7)
 - ✅ **Use existing assets folder structure**
 
@@ -18,7 +18,7 @@
 When starting a new Next.js project, use this template to:
 
 ### **STEP 1: PRE-EXECUTION VERIFICATION**
-1. **Verify Current Directory** - Must be in `Next.js-Template-GrowInity`
+1. **Verify Current Directory** - Must be in `root`
 2. **Check MCP Availability** - Confirm `bright-data` and `context-7` MCPs are installed
 3. **Read `CUSTOMER_DATA.md` file first** - This contains the GrowInity form submission
 4. **Extract all customer information** from the email data in that file
@@ -681,7 +681,7 @@ NEXT_PUBLIC_FACEBOOK_PIXEL_ID=your_pixel_id_here
 
 **⚠️ CRITICAL: Phase 1 MUST include complete Playwright testing setup (lines 692-696)**
 **This ensures testing framework is ready for future test creation when needed**
-- [ ] **VERIFY**: Current directory is `Next.js-Template-GrowInity` 
+- [ ] **VERIFY**: Current directory is `root` 
 - [ ] **VERIFY**: MCPs (bright-data, context-7) are available
 - [ ] **READ**: brand-info.txt for EXACT brand colors (#22254F #016ADF #FFFFFF)
 - [ ] **READ**: assets/branding/logos/ for existing logo files
