@@ -228,9 +228,9 @@ After extracting customer data, read these files to gather additional project in
 ✅ preferredColors       ✅ inspirationDifference ✅ formFields
 ✅ desiredMood          ✅ usesFacebook         ✅ integrations (array)
 ✅ animations (array)    ✅ facebookPixel        ✅ languages
-✅ budget               ✅ facebookPixelId      ✅ hostingPreference
-✅ timeline             ✅ trackingGoals        ✅ supportType
-✅ specificDate         ✅ newsletterSystem     ✅ contactName/Email
+✅ budget               ✅ facebookPixelId      ✅ supportType
+✅ timeline             ✅ trackingGoals        ✅ contactName/Email
+✅ specificDate         ✅ contactPhone (required)
 ```
 
 ### 🔄 Auto-Population Process
@@ -550,7 +550,6 @@ Deployment: Vercel
 
 ## Integrations Required
 [integrations.map(integration => `- ${integration}`).join('\n')]
-[If crmSystem: `- CRM: ${crmSystem}`]
 
 ## Facebook Marketing Setup
 [If usesFacebook !== 'geen-facebook']:
@@ -563,7 +562,6 @@ Deployment: Vercel
 - **Priority Level:** [seoImportance]
 - **Target Keywords:** [targetKeywords]
 - **Local SEO:** [customerType === 'lokaal' ? 'Required' : 'Not needed']
-- **Device Focus:** [deviceUsage]
 
 ## Multi-language Support
 [languages === 'alleen-nederlands' ? 'Dutch only' : languages]
@@ -575,8 +573,7 @@ Deployment: Vercel
 [If industryRulesOther]: Additional: [industryRulesOther]
 **Required Legal Pages:** [legalPages.join(', ')]
 
-## Hosting & Support
-- **Hosting:** [hostingPreference]
+## Support & Existing Website
 [If existingWebsite]: - **Current Website:** [existingWebsite]
 - **Support Type:** [supportType]
 
@@ -601,7 +598,7 @@ Follow the 6-phase execution plan:
 
 ## Performance Requirements
 - Lighthouse Score: 95+
-- Mobile-first responsive design ([deviceUsage])
+- Mobile-first responsive design
 - Fast loading times (<2.5s LCP)
 - SEO optimized ([seoImportance] priority)
 ```
