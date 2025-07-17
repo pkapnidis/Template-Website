@@ -4,7 +4,8 @@
 
 ### **⚠️ DIRECTORY REQUIREMENTS**
 - ❌ **NEVER create new project folders** 
-- ✅ **ALWAYS copy from `/newproject` boilerplate to (Project name)**
+- ✅ **ALWAYS rename `newproject` directory to actual project name** (e.g., `mv newproject eden-barber-shop`)
+- ✅ **Work directly in the renamed newproject directory** - No copying or duplication
 - ✅ **Preserve MCP configurations** (Bright Data, Context-7)
 - ✅ **Use existing assets folder structure**
 - ✅ **Pre-configured framework** - No installations needed
@@ -16,7 +17,10 @@
 - ✅ **Update tracking files** after each phase completion
 - ✅ **Verify all requirements before proceeding**
 - ✅ **CONTINUOUS FLOW** - No interruptions, execute all phases sequentially
+- ✅ **NEVER STOP EXECUTION** - Complete all 6 phases in one continuous session
+- ✅ **AUTOMATIC PROGRESSION** - Move to next phase immediately after completion
 - ❌ **DO NOT mix phases in single todo list**
+- ❌ **DO NOT pause for user input** - Execute all phases automatically
 
 ### **📊 MANDATORY TRACKING SYSTEM**
 **⚠️ CRITICAL: Create these tracking files in Phase 1 - DO NOT SKIP**
@@ -627,6 +631,47 @@ Testing: Playwright (E2E) with UI Mode ✅ PRE-CONFIGURED
 Marketing: Only implement if customer specifically requests
 ```
 
+### 🚀 2024-2025 React Best Practices Integration
+
+#### Modern React Patterns (All Pre-configured)
+- **Functional Components Only**: Use React hooks pattern throughout
+- **Server Components**: Leverage React Server Components for optimal performance
+- **Custom Hooks**: Extract reusable logic into custom hooks for DRY code
+- **State Management**: Use Zustand/Jotai for lightweight state (Redux Toolkit for complex apps)
+- **Component Composition**: Use React.memo, useMemo, and useCallback for optimization
+- **Suspense Boundaries**: Implement error boundaries and loading states
+
+#### Next.js App Router Best Practices (2024-2025)
+- **App Router Architecture**: Folder-based routing with enhanced layouts
+- **React Server Components**: Reduce client-side JavaScript execution
+- **Incremental Static Regeneration (ISR)**: For dynamic content that updates
+- **Static Site Generation (SSG)**: For static pages with fast load times
+- **Edge Functions**: Render closer to users for improved performance
+- **Streaming**: Use React Suspense for progressive loading
+
+#### Performance Optimization Standards
+- **Image Optimization**: Use Next.js Image component with WebP format
+- **Code Splitting**: Dynamic imports with next/dynamic
+- **Bundle Optimization**: Remove unused JavaScript and optimize bundle size
+- **Core Web Vitals**: Target LCP <2.5s, INP <200ms, CLS <0.1
+- **Mobile-First**: CSS Grid and Flexbox for responsive design
+- **Caching Strategy**: CDN integration with proper cache headers
+
+#### Security Best Practices (2024-2025)
+- **Data Access Layer (DAL)**: Centralized authentication checks
+- **Server Actions Security**: Always validate sessions in server actions
+- **DTOs**: Return only necessary data to clients
+- **Multi-Layer Security**: Auth checks at data, route, UI, and server action levels
+- **Session Management**: HTTP-only and secure cookies
+- **Input Validation**: Zod schemas for all forms and API endpoints
+
+#### Testing Strategy (Modern Framework)
+- **Unit Testing**: Jest + React Testing Library for component testing
+- **Integration Testing**: Test user interactions and component integration
+- **E2E Testing**: Playwright for critical user flows
+- **Performance Testing**: Lighthouse CI for automated performance checks
+- **Accessibility Testing**: Built-in accessibility validation
+
 ### 🚨 CRITICAL TAILWIND CSS REQUIREMENTS
 **⚠️ ALWAYS USE TAILWIND CSS v3.4.0 - NEVER v4**
 
@@ -714,7 +759,7 @@ npm run dev      # Start development server for testing
 3. **Only use `npm run dev`** when you need to test functionality
 4. **Never rely on dev server** for error validation
 
-### 🌐 INTERNATIONALIZATION DETECTION & SETUP
+### 🌐 INTERNATIONALIZATION DETECTION & SETUP (2025 STANDARDS)
 **⚠️ CRITICAL: Check for multiple languages BEFORE starting development**
 
 #### **Multi-Language Detection Process**
@@ -734,26 +779,44 @@ npm run dev      # Start development server for testing
 <footer>{t.footer.description}</footer>
 ```
 
-#### **Multi-Language Setup Requirements**
+#### **2025 Multi-Language Setup Requirements**
 If customer needs multiple languages:
-1. **Install i18n dependencies**: `npm install next-i18next react-i18next`
-2. **Configure i18n routing** in Next.js
-3. **Create translation files** for each language
-4. **Set up language context** throughout application
-5. **Configure testing** for language contexts
-6. **Update all text** to use translation keys
+1. **Modern i18n Setup**: Use Next.js 15 built-in internationalization
+2. **App Router Integration**: Configure i18n with App Router
+3. **Server Components**: i18n-compatible server components
+4. **Dynamic Routing**: Language-based routing with middleware
+5. **Translation Management**: Organized translation file structure
+6. **SEO Optimization**: Proper hreflang tags and metadata
 
-#### **Testing with Multiple Languages**
-- Tests must account for language context
-- Use translation keys in test selectors
-- Test language switching functionality
-- Verify all text displays correctly in each language
+#### **Modern i18n Architecture**
+```javascript
+// next.config.js (2025 approach)
+module.exports = {
+  i18n: {
+    locales: ['en', 'nl', 'fr'],
+    defaultLocale: 'en',
+    localeDetection: true,
+  },
+  // Support for RSC and App Router
+  experimental: {
+    serverComponentsExternalPackages: ['next-i18next'],
+  },
+}
+```
+
+#### **Testing with Multiple Languages (2025 Standards)**
+- **Component Testing**: Test translation keys in React Testing Library
+- **E2E Testing**: Playwright tests for language switching
+- **Performance Testing**: Ensure translations don't impact performance
+- **SEO Testing**: Verify proper hreflang implementation
+- **Accessibility Testing**: Test screen readers with multiple languages
 
 #### **Critical Warning**
 **🚨 NEVER USE HARDCODED TEXT IN MULTI-LANGUAGE PROJECTS**
 - Always use `{t.key.name}` format
 - Set up translation context from the start
 - Plan for language switching in UI design
+- Ensure all content is translatable from day one
 
 ### Optional Marketing Features (Only Implement If Customer Requests)
 
@@ -776,18 +839,18 @@ If customer needs multiple languages:
 
 ## Implementation Examples
 
-### Facebook Pixel Setup for Next.js 14 App Router
+### Facebook Pixel Setup for Next.js 15 App Router (2025 Standards)
 **⚠️ CRITICAL: ONLY IMPLEMENT IF CUSTOMER EXPLICITLY REQUESTS SOCIAL MEDIA MARKETING**
 **🔍 Always check CUSTOMER_DATA.md first - do not assume this is needed**
 
-#### Setup Instructions (When Customer Requests It)
+#### 2025 Security-First Setup Instructions (When Customer Requests It)
 
 1. **Install Dependencies:**
 ```bash
 npm install react-facebook-pixel
 ```
 
-2. **Create Pixel Component:**
+2. **Create Secure Pixel Component:**
 ```typescript
 // components/FacebookPixel.tsx
 'use client';
@@ -800,8 +863,11 @@ interface FacebookPixelProps {
 
 const FacebookPixel = ({ pixelId }: FacebookPixelProps) => {
   useEffect(() => {
-    ReactPixel.init(pixelId);
-    ReactPixel.pageView();
+    // 2025 Security: Only initialize in production
+    if (process.env.NODE_ENV === 'production' && pixelId) {
+      ReactPixel.init(pixelId);
+      ReactPixel.pageView();
+    }
   }, [pixelId]);
 
   return null;
@@ -909,7 +975,7 @@ NEXT_PUBLIC_FACEBOOK_PIXEL_ID=your_pixel_id_here
   - [ ] Create `EXECUTION_STATE.md` with real-time session state and current working context
 - [ ] **READ**: brand-info.txt for EXACT brand colors (#22254F #016ADF #FFFFFF)
 - [ ] **READ**: assets/branding/logos/ for existing logo files
-- [ ] **COPY BOILERPLATE**: `cp -r /newproject ./ProjectName` (rename to actual project name)
+- [ ] **RENAME BOILERPLATE**: `mv newproject ProjectName` (rename newproject directory to actual project name)
 - [ ] **VERIFY BUILD**: Run `npm run build` and `npm run lint` to ensure setup works
 - [ ] **CRITICAL**: Verify CSS compilation works - CSS file should be thousands of lines, not just fonts
 - [ ] Configure Tailwind with **EXACT brand colors from brand-info.txt**
@@ -926,27 +992,54 @@ NEXT_PUBLIC_FACEBOOK_PIXEL_ID=your_pixel_id_here
 - [ ] **USE Bright Data MCP**: Analyze each URL in competitor-urls.txt
 - [ ] **DOCUMENT**: Competitive analysis insights 
 - [ ] **USE EXISTING IMAGES** from assets/branding/images/
-- [ ] Build responsive layout with header/footer
+- [ ] Build responsive layout with header/footer using CSS Grid/Flexbox
 - [ ] Implement Hero section with brand-specific messaging
 - [ ] Create product/service showcase sections
 - [ ] Add benefits/features section with 2025 design trends
+- [ ] **APPLY 2025 DESIGN TRENDS**: Implement modern visual elements
+  - [ ] **Container Queries**: For responsive component design
+  - [ ] **CSS Grid Advanced**: Modern layout patterns
+  - [ ] **Modern Typography**: Web font optimization
+  - [ ] **Accessibility**: ARIA labels and semantic HTML
 - [ ] Implement mobile-first responsive design
+- [ ] **PERFORMANCE OPTIMIZATION**: Core Web Vitals compliance
+  - [ ] **Image Optimization**: Next.js Image component with WebP
+  - [ ] **Layout Shift Prevention**: Proper image dimensions
+  - [ ] **Loading Performance**: Lazy loading and code splitting
 - [ ] **APPLY**: Competitor analysis insights to design
 - [ ] **UPDATE TRACKING**: Save Phase 2 progress to all tracking files
-- [ ] **VERIFICATION**: All existing assets used, competitive insights applied
+- [ ] **VERIFICATION**: All existing assets used, competitive insights applied, performance optimized
 - [ ] **PHASE 2 COMPLETE**: Mark Phase 2 complete in TodoWrite and proceed to Phase 3
 
 ### Phase 3: Interactive Elements & Effects (30-45 minutes)
 **📋 CREATE PHASE 3 TODO LIST**
 **🔍 CUSTOMER CHECK: Review contact methods and form requirements**
-- [ ] Implement contact form with validation (Name, Email, Phone, Message)
-- [ ] Add Framer Motion animations based on customer preferences
-- [ ] Create smooth scroll navigation
-- [ ] Add hover effects and micro-interactions
-- [ ] Implement loading states and transitions
-- [ ] Apply modern effects (glassmorphism, gradients, etc.)
+- [ ] **MODERN FORM IMPLEMENTATION**: React Hook Form + Zod validation
+  - [ ] **Form Validation**: Real-time validation with Zod schemas
+  - [ ] **Error Handling**: User-friendly error messages
+  - [ ] **Form Fields**: Name, Email, Phone, Message with proper types
+  - [ ] **Security**: Input sanitization and validation
+- [ ] **FRAMER MOTION ANIMATIONS**: Based on customer preferences
+  - [ ] **Page Transitions**: Smooth route transitions
+  - [ ] **Component Animations**: Entrance animations and micro-interactions
+  - [ ] **Scroll Animations**: Scroll-triggered animations
+  - [ ] **Performance**: Optimized animations with proper easing
+- [ ] **MODERN INTERACTIONS**: 2025 UX patterns
+  - [ ] **Hover Effects**: Subtle state changes
+  - [ ] **Focus States**: Accessibility-compliant focus indicators
+  - [ ] **Loading States**: Skeleton loaders and progress indicators
+  - [ ] **Micro-interactions**: Button states and feedback
+- [ ] **REACT OPTIMIZATIONS**: Performance-focused implementation
+  - [ ] **React.memo**: Prevent unnecessary re-renders
+  - [ ] **useMemo/useCallback**: Optimize expensive computations
+  - [ ] **Custom Hooks**: Extract reusable logic
+  - [ ] **Suspense**: Loading boundaries for async components
+- [ ] **ACCESSIBILITY**: WCAG 2.1 AA compliance
+  - [ ] **Keyboard Navigation**: Tab order and focus management
+  - [ ] **Screen Reader**: ARIA labels and semantic markup
+  - [ ] **Color Contrast**: Ensure sufficient contrast ratios
 - [ ] **UPDATE TRACKING**: Save Phase 3 progress to all tracking files
-- [ ] **VERIFICATION**: All animations working, form functional
+- [ ] **VERIFICATION**: All animations working, form functional, accessibility compliant
 - [ ] **PHASE 3 COMPLETE**: Mark Phase 3 complete in TodoWrite and proceed to Phase 4
 
 ### Phase 4: Content Integration & Personalization (30 minutes)
@@ -982,15 +1075,40 @@ ONLY implement what customer specifically requested:
 ### Phase 6: Testing, Compliance & Deployment (30 minutes)
 **📋 CREATE PHASE 6 TODO LIST**
 **🔍 CUSTOMER CHECK: Review legal requirements and deployment preferences**
-- [ ] Add compliance requirements (disclaimers, privacy policy)
-- [ ] Test form submissions and integrations
-- [ ] Mobile responsiveness testing
-- [ ] Performance optimization (Lighthouse 95+)
-- [ ] Deploy to Vercel with custom domain
-- [ ] Final testing and optimization
+- [ ] **MODERN TESTING SUITE**: Comprehensive testing implementation
+  - [ ] **Unit Testing**: Jest + React Testing Library for components
+  - [ ] **Integration Testing**: Test user interactions and data flow
+  - [ ] **E2E Testing**: Playwright for critical user journeys
+  - [ ] **Accessibility Testing**: Automated accessibility validation
+  - [ ] **Performance Testing**: Lighthouse CI for automated performance checks
+- [ ] **SECURITY COMPLIANCE**: 2025 security standards
+  - [ ] **Data Access Layer**: Centralized authentication checks
+  - [ ] **Input Validation**: All forms use Zod schemas
+  - [ ] **Session Security**: HTTP-only and secure cookies
+  - [ ] **API Security**: Rate limiting and validation
+- [ ] **PERFORMANCE OPTIMIZATION**: Core Web Vitals compliance
+  - [ ] **Lighthouse Score**: Target 95+ across all metrics
+  - [ ] **Core Web Vitals**: LCP <2.5s, INP <200ms, CLS <0.1
+  - [ ] **Bundle Analysis**: Optimize JavaScript bundle size
+  - [ ] **Caching Strategy**: CDN and browser caching headers
+- [ ] **DEPLOYMENT & MONITORING**: Production-ready deployment
+  - [ ] **Vercel Deployment**: Optimized build and deployment
+  - [ ] **Custom Domain**: SSL certificate and domain configuration
+  - [ ] **Analytics Setup**: Google Analytics 4 implementation
+  - [ ] **Error Monitoring**: Sentry integration for error tracking
+- [ ] **COMPLIANCE REQUIREMENTS**: Legal and regulatory compliance
+  - [ ] **Privacy Policy**: GDPR/CCPA compliant privacy policy
+  - [ ] **Terms of Service**: Service terms and conditions
+  - [ ] **Cookie Consent**: Cookie banner implementation
+  - [ ] **Accessibility**: WCAG 2.1 AA compliance verification
+- [ ] **FINAL TESTING**: Multi-device and browser testing
+  - [ ] **Cross-Browser**: Chrome, Firefox, Safari, Edge testing
+  - [ ] **Mobile Testing**: iOS and Android device testing
+  - [ ] **Form Testing**: All contact forms and integrations
+  - [ ] **Performance Testing**: Real-world performance validation
 - [ ] **UPDATE TRACKING**: Mark project as COMPLETED in all tracking files
-- [ ] **FINAL VERIFICATION**: All features working, brand applied, assets used
-- [ ] **PROJECT COMPLETE**: All phases completed successfully
+- [ ] **FINAL VERIFICATION**: All features working, brand applied, assets used, performance optimized
+- [ ] **PROJECT COMPLETE**: All phases completed successfully with 2025 standards
 
 ---
 
