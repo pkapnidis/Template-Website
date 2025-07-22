@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/home/enrico_arrasco/GithubProjects/nextjs-project-template/logs/.1b34aeab4d24d95335ebe4ce996736500f0bcc51-audit.json",
+    "files": [
+        {
+            "date": 1753187095524,
+            "name": "/home/enrico_arrasco/GithubProjects/nextjs-project-template/logs/mcp-puppeteer-2025-07-22.log",
+            "hash": "d1879e1868af01cfbc1ad1bc619c106cc8faaf896b3d1adf825ba7db196824f6"
+        }
+    ],
+    "hashType": "sha256"
+}
